@@ -8,6 +8,6 @@ while True:
     diceSides = int(input()) # asks how many sides on the dice
 
     print('How many dice?')
-    diceNumber = int(input()) # asks how many dice to roll
+    diceAmount = int(input()) # asks how many dice to roll
 
-    print('You rolled: ' + str(random.randint(1, (diceSides * diceNumber)))) # prints a random number from 1 to diceSides multiplied by diceNumber
+    print('You rolled: ' + str(random.randint(1, (diceSides * diceAmount)))) # prints a random number from 1 to diceSides multiplied by diceNumber
