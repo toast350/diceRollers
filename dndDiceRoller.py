@@ -5,7 +5,7 @@ while True:
     if input() == 'exit':
         break
 
-    print('D4(1) D6(2) D8(3) D10(4) D12(5) D20(6) custom(7) exit(8)')
+    print('D4(1) D6(2) D8(3) D10(4) D12(5) D20(6) custom(7) cancel(8)')
     diceSides = input()        
     if diceSides == '1':
         diceSides = 4
@@ -32,5 +32,12 @@ while True:
         print('How many dice do you want to roll?')
         diceAmount = int(input())
  
-        print('You rolled ' + str(diceAmount) + ' D' + str(diceSides) + 's and got: ' + str(random.randint(1, (diceSides * diceAmount)))) # prints a random number from 1 to diceSides multiplied by diceNumber
+        total = 0
+        print('Rolling dice:')
+        for i in range(diceAmount):
+            roll = random.randint(1, diceSides)
+            print(roll)
+            total += roll
+
+        print('You rolled ' + str(diceAmount) + ' D' + str(diceSides) + 's, and got ' + str(total))
         input()
