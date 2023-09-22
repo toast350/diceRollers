@@ -32,12 +32,15 @@ while True:
         print('How many dice do you want to roll?')
         diceAmount = int(input())
  
-        total = 0
-        print('Rolling dice:')
-        for i in range(diceAmount):
-            roll = random.randint(1, diceSides)
-            print(roll)
-            total += roll
+        if diceAmount == 1:
+            print('You rolled 1D%s, and got %s.' %(str(diceSides), str(random.randint(1, diceSides))))
+        else:
+            total = 0
+            print('Rolling dice:')
+            for i in range(diceAmount):
+                roll = random.randint(1, diceSides)
+                print(roll)
+                total += roll
 
-        print('You rolled ' + str(diceAmount) + ' D' + str(diceSides) + 's, and got ' + str(total))
+            print('You rolled ' + str(diceAmount) + ' D' + str(diceSides) + 's, and got ' + str(total))
         input()
