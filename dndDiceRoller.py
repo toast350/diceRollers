@@ -33,7 +33,7 @@ while True:
         diceAmount = int(input())
  
         if diceAmount == 1:
-            print('You rolled 1D%s, and got %s.' %(str(diceSides), str(random.randint(1, diceSides))))
+            print('You rolled 1 D%s, and got %s.' %(str(diceSides), str(random.randint(1, diceSides))))
         else:
             total = 0
             print('Rolling dice:')
@@ -42,5 +42,5 @@ while True:
                 print(roll)
                 total += roll
 
-            print('You rolled ' + str(diceAmount) + ' D' + str(diceSides) + 's, and got ' + str(total))
+            print('You rolled ' + str(diceAmount) + ' D' + str(diceSides) + 's, and got ' + str(total) + '.')
         input()
