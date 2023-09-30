@@ -20,19 +20,25 @@ while True:
     elif diceSides == '6':
         diceSides = 20 # reassigns values to diceSides
     elif diceSides == '7':
-        print('Enter how many sides you want the dice to have')
-        diceSides = int(input())
+        try: diceSides = int(input('Enter how many sides you want the dice to have'))
+        except ValueError:
+            diceSides = '8'
+            print('Invalid input')
     elif diceSides == '8':
         continue
     else:
-        print('Invalid input, try again')
         diceSides = '8'
+        print('Invalid input')
 
     if diceSides != '8':
-        print('How many dice do you want to roll?')
-        diceAmount = int(input())
+        try: diceAmount = int(input('How many dice do you want to roll?\n'))
+        except ValueError:
+            diceAmount = 'error'
+            print('Invalid input')
  
-        if diceAmount == 1:
+        if diceAmount == 'error':
+            continue
+        elif diceAmount == 1:
             print('You rolled 1 D%s, and got %s.' %(str(diceSides), str(random.randint(1, diceSides))))
         else:
             total = 0
@@ -42,5 +48,5 @@ while True:
                 print(roll)
                 total += roll
 
-            print('You rolled ' + str(diceAmount) + ' D' + str(diceSides) + 's, and got ' + str(total) + '.')
+            print('You rolled %s D%ss and got %s.' % (str(diceAmount), str(diceSides), str(total)))
         input()
